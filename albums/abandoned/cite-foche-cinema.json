@@ -1,15 +1,1 @@
-{
-  "name": "cite-foche-cinema",
-  "album": "abandoned",
-  "public_id": "abandoned/cite-foche-cinema",
-  "format": "tiff",
-  "version": 1497000077,
-  "created_at": "2017-06-09T09:21:17Z",
-  "width": 2560,
-  "height": 1440,
-  "colors": [
-    { "code": "#272727", "weight": 49.9 },
-    { "code": "#797979", "weight": 30.3 },
-    { "code": "#DDDDDD", "weight": 18.5 }
-  ]
-}
+{"name":"cite-foche-cinema","album":"abandoned","public_id":"abandoned/cite-foche-cinema","format":"tiff","version":1497000077,"created_at":"2017-06-09T09:21:17Z","width":2560,"height":1440,"tags":[],"colors":[{"code":"#272727","weight":49.9},{"code":"#797979","weight":30.3},{"code":"#DDDDDD","weight":18.5}]}
