@@ -17,6 +17,9 @@ interface Photo {
   height: number;
   colors?: Color[];
   tags: string[];
+  image_metadata?: {
+    [index: string]: string
+  }
 }
 
 interface Folder {
@@ -59,6 +62,7 @@ const processPhoto = ({
   height,
   colors,
   tags,
+  image_metadata,
 }: any): Photo => ({
   name: getPhotoName(public_id),
   album: getAlbumName(public_id),
@@ -69,7 +73,8 @@ const processPhoto = ({
   width,
   height,
   ...(tags ? { tags } : { tags: [] }),
-  ...(colors && { colors: remapColors(colors) })
+  ...(colors && { colors: remapColors(colors) }),
+  ...(image_metadata && { image_metadata }),
 });
 
 const requestAllPhotos = async (max: number = 10): Promise<Photo[]> => {
