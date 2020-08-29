@@ -52,6 +52,7 @@ const remapColors = (colors: any): Color[] => colors.map((color: any): Color => 
   code: color[0],
   weight: color[1]
 }));
+const removeDiactrics = (str: string = ''): string => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
 const processPhoto = ({
   public_id,
@@ -64,9 +65,9 @@ const processPhoto = ({
   tags,
   image_metadata,
 }: any): Photo => ({
-  name: getPhotoName(public_id),
+  name: removeDiactrics(getPhotoName(public_id)),
   album: getAlbumName(public_id),
-  public_id,
+  public_id: removeDiactrics(public_id),
   format,
   version,
   created_at,
@@ -175,7 +176,7 @@ const run = async (): Promise<void> => {
   }
 
   // finished
-  console.log('Done!');
+  console.log(`Successfully added ${photos.length} photos.`);
 };
 
 run();
